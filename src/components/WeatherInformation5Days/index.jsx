@@ -22,7 +22,6 @@ export default function WeatherInformation5Days({ weather5Days }) {
     <div className="weather-container">
       <h3>Previsão Próximos 5 Dias</h3>
       <div className="weather-list">
-
       {next5Days.map((forecast) => (
         <div key={forecast.dt} className="weather-item">
           <p className="weather-day">{convertDate(forecast)}</p>
