@@ -1,18 +1,20 @@
 
-
+import './weather.css';
 export default function WeatherInformation({ weather }) {
 
     const urlImage = `https://openweathermap.org/img/wn/${weather?.weather[0].icon}.png`;
     
  return (
-   <div>
+   <div className='weather-container'>
     <h2>{weather?.name}</h2>
-    <img src={urlImage}></img>
-    <p> {Math.round(weather?.main.temp)} ºC</p>
-    <div>
+    <div className='weather-info'>
+    <img src={urlImage}/>    
+    <p className='temperature'> {Math.round(weather?.main.temp)} ºC</p>
+    </div>
+    <div className='description'>
         {weather?.weather[0].description}
     </div>
-    <div>
+    <div className='details'>
         <p> Sensação Térmica: {Math.round(weather?.main.feels_like)} ºC</p>
         <p> Min: {Math.round(weather?.main.temp_min)} ºC</p>
         <p> Max: {Math.round(weather?.main.temp_max)} ºC</p>
